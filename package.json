@@ -1,0 +1,23 @@
+{
+  "name": "use-bounding-rect",
+  "version": "0.1.0",
+  "description": "A tiny React hook to access DOM Rect dynamically",
+  "type": "module",
+  "main": "./useBoundingRect.js",
+  "module": "./useBoundingRect.js",
+  "exports": "./useBoundingRect.js",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "dom",
+    "rect",
+    "resize",
+    "observer"
+  ],
+  "author": "Alexey Raspopov",
+  "license": "ISC",
+  "repository": "alexeyraspopov/use-bounding-rect",
+  "peerDependencies": {
+    "react": ">=16.8.6"
+  }
+}
