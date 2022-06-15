@@ -8,7 +8,12 @@ export function useBoundingRect(ref) {
     if (target == null) return;
     setRect(target.getBoundingClientRect());
     let observer = new ResizeObserver(() => {
+      // ResizeObserver provides clientRect as a part of observed entries
+      // but it's not in sync with result of getBoundingClientRect()
+      // which causes unnecessary state update (and so re-renders)
       let newRect = target.getBoundingClientRect();
+      // getBoundingClientRect() always returns a new instance
+      // DOMRect doesn't have own properties so it needs special shallowEqual implementation
       setRect((rect) => (equals(rect, newRect) ? rect : newRect));
     });
     observer.observe(target);

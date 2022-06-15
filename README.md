@@ -2,7 +2,8 @@
 
     npm install use-bounding-rect
 
-A tiny React hook to access [DOM Rect][gbcr] of an element dynamically.
+A tiny React hook to access [DOM Rect][gbcr] of an element dynamically. Uses [`ResizeObserver`][ro]
+under the hood to update state.
 
 ```jsx
 import { useBoundingRect } from "use-bounding-rect";
@@ -19,3 +20,4 @@ function Wrapper() {
 ```
 
 [gbcr]: https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
+[ro]: https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
